@@ -1,0 +1,82 @@
+@import "tachyons-sass/tachyons.scss";
+
+.post {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend .mid-gray, .mv2, .lh-title;
+  }
+
+  h3 {
+  }
+
+  /*
+  h3:before {
+    content: "#";
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 3rem;
+    @extend .gray;
+  }
+  */
+
+  .highlight {
+    @extend .br2, .pa3, .highlight;
+  }
+
+  p > code {
+    @extend .br2, .code, .pa1, .dark-red, .bg-light-gray, .f7;
+  }
+
+  code {
+    font-size: 14px;
+  }
+
+  pre {
+    @extend .mv0, .pa2;
+    counter-reset: line;
+  }
+
+  pre > code > span {
+    display: inline-block;
+    line-height: 1.25rem;
+    counter-increment: line;
+  }
+  pre > code > span:before {
+    content: counter(line);
+    display: inline-block;
+
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    color: #888;
+    @extend .w1, .tr;
+  }
+  .highlight {
+    overflow: scroll;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+.react-blue {
+  color: #61dbfb;
+}
+
+.react-code > .highlight {
+  border-bottom: 5px solid #61dbfb;
+}
+
+.ember-orange {
+  color: #e04e39;
+}
+.ember-code > .highlight {
+  border-bottom: 5px solid #e04e39;
+}
+
+.hash-link {
+  @extend .link, .dark-gray, .dim;
+}
