@@ -42,7 +42,7 @@
   }
 
   pre > code > span {
-    display: inline-block;
+    display: flex;
     line-height: 1.25rem;
     counter-increment: line;
   }
