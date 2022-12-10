@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+  <head>
+    <title>Ember React CheetSheat</title>
+    {{ $markdownsass := resources.Get "scss/markdown.scss" }} {{ $markdownstyle
+    := $markdownsass | resources.ToCSS }} {{ $style := resources.Get
+    "tachyons.min.css" }}
+    <link rel="stylesheet" href="{{ $markdownstyle.Permalink }}" />
+  </head>
+  <body class="bg-near-white near-black avenir">
+    <article class="cf ph3 ph5-ns pb0-ns pv5">
+      <header class="fn fl-ns w-50-ns pr4-ns">
+        <h1 class="f2 lh-title fw6 mb3 mt0 pt3 bt bw2 b--dark-gray">
+          Ember vs React <span class="gray">Cheatsheet</span>
+        </h1>
+        <h2 class="f3 mid-gray lh-title">
+          A simple site to compare the ways in which Ember Octane does tasks vs
+          React w/ hooks
+        </h2>
+        <p class="f6 lh-copy gray">
+          React is not as much of a framework as Ember, the examples below are shown with a minimal React setup.
+          If looking for a full featured framework with React, try <b>Nextjs</b>.
+          These examples will work in Next as they only focus on core component features.
+        </p>
+      </header>
+      <div class="fn fl-ns w-50-ns">
+        <p class="f5 lh-copy measure mv0 center">
+          {{ $emberSvg := resources.Get "svg/ember-tomster-lockup-4c.svg" }}
+          {{ $reactSvg := resources.Get "svg/React-icon.svg" }}
+          <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+            <image href="{{ $emberSvg.Permalink }}" height="150" width="150" />
+          </svg>
+          <h4 class="mv0 baskerville i fw1 f1 tc">VS</h4>
+          <div class="tr">
+          <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+            <image href="{{ $reactSvg.Permalink }}" height="150" width="150" />
+          </svg>
+          </div>
+        </p>
+      </div>
+    </article>
+    {{range .Site.Sections }} {{range sort .Pages "Params.order" }}
+    <article class="pa3 ph5-ns pv3-ns">
+      <h1 class="pt3">{{ .Title }}</h1>
+      <section class="1h-copy post">{{ .Content }}</section>
+    </article>
+    {{ end }} {{ end }}
+  </body>
+</html>

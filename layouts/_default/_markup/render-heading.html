@@ -1,0 +1,14 @@
+{{ if lt .Level 4}}
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+		<div class="flex">
+    <a class="db hash-link nohover nl3 mr2" href="#{{ .Anchor | safeURL }}">
+			#
+    </a>
+		<span class="bb bw1 b--gray pb1 db w-100 ">{{ .Text | safeHTML }}</span>
+		</div>
+</h{{ .Level }}>
+{{ else }}
+<h{{ .Level }}>
+    {{ .Text | safeHTML }}
+</h{{ .Level }}>
+{{ end }}
