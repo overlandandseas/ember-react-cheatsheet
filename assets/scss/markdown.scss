@@ -10,20 +10,6 @@
     @extend .mid-gray, .mv2, .lh-title;
   }
 
-  h3 {
-  }
-
-  /*
-  h3:before {
-    content: "#";
-    font-weight: bold;
-    font-size: 1.2rem;
-    position: absolute;
-    left: 3rem;
-    @extend .gray;
-  }
-  */
-
   .highlight {
     @extend .br2, .pa3, .highlight;
   }
@@ -68,14 +54,14 @@
 }
 
 .react-code > .highlight {
-  border-bottom: 5px solid #61dbfb;
+  border-bottom: 7px solid #61dbfb;
 }
 
 .ember-orange {
   color: #e04e39;
 }
 .ember-code > .highlight {
-  border-bottom: 5px solid #e04e39;
+  border-bottom: 7px solid #e04e39;
 }
 
 .hash-link {
