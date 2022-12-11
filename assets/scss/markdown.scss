@@ -42,7 +42,7 @@
   }
 
   pre > code > span {
-    display: flex;
+    display: block !important;
     line-height: 1.25rem;
     counter-increment: line;
   }
@@ -59,6 +59,7 @@
     overflow: scroll;
     padding: 0 !important;
     border-radius: 0 !important;
+    background-color: #272822;
   }
 }
 
